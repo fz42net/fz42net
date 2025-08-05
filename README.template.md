@@ -10,7 +10,7 @@ Sometimes I write about security research, software development, and the interse
 <!-- BLOG-POST-LIST:END -->
 
 ---
-You can also find my [**resume here**](https://github.com/fz42net/resume/releases/latest/download/resume.pdf) and connect with me on [LinkedIn](https://www.linkedin.com/in/philthomasme/) or [bluesky](https://bsky.app/profile/fz42).
+You can also find my [**resume here**](https://github.com/fz42net/resume/releases/latest/download/resume.pdf) and connect with me on [LinkedIn](https://www.linkedin.com/in/philthomasme/) or [bluesky](https://bsky.app/profile/fz42.bsky.social).
 
 This `README.md` is generated automatically by [a scheduled GitHub Action](https://github.com/fz42net/fz42net/blob/main/.github/workflows/update-readme.yml), inspired by [brandur's setup](https://github.com/brandur/brandur).
 
