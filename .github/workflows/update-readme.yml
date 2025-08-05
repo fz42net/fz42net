@@ -28,18 +28,35 @@ jobs:
         if: github.event_name == 'repository_dispatch'
         run: |
           # Get the latest release from the private resume repo
+          echo "Fetching latest release info..."
           LATEST_RELEASE=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
             https://api.github.com/repos/fz42net/resume/releases/latest)
           
-          # Extract the download URL for resume.pdf
-          DOWNLOAD_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name=="resume.pdf") | .url')
+          echo "API Response:"
+          echo "$LATEST_RELEASE" | jq '.'
           
-          # Download the PDF
-          curl -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-            -H "Accept: application/octet-stream" \
-            "$DOWNLOAD_URL" -o resume.pdf
-          
-          echo "Downloaded resume.pdf from version: ${{ github.event.client_payload.version }}"
+          # Check if we got a valid response
+          if echo "$LATEST_RELEASE" | jq -e '.assets' > /dev/null; then
+            # Extract the download URL for resume.pdf
+            DOWNLOAD_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name=="resume.pdf") | .url')
+            
+            if [ "$DOWNLOAD_URL" != "null" ] && [ -n "$DOWNLOAD_URL" ]; then
+              echo "Downloading PDF from: $DOWNLOAD_URL"
+              # Download the PDF
+              curl -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+                -H "Accept: application/octet-stream" \
+                "$DOWNLOAD_URL" -o resume.pdf
+              
+              echo "Downloaded resume.pdf from version: ${{ github.event.client_payload.version }}"
+            else
+              echo "Error: Could not find resume.pdf in release assets"
+              exit 1
+            fi
+          else
+            echo "Error: Invalid API response or no releases found"
+            echo "$LATEST_RELEASE"
+            exit 1
+          fi
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
       
