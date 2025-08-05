@@ -28,20 +28,20 @@ jobs:
         if: github.event_name == 'repository_dispatch'
         run: |
           # Get the latest release from the private resume repo
-          LATEST_RELEASE=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          LATEST_RELEASE=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
             https://api.github.com/repos/fz42net/resume/releases/latest)
           
           # Extract the download URL for resume.pdf
           DOWNLOAD_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name=="resume.pdf") | .url')
           
           # Download the PDF
-          curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          curl -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
             -H "Accept: application/octet-stream" \
             "$DOWNLOAD_URL" -o resume.pdf
           
           echo "Downloaded resume.pdf from version: ${{ github.event.client_payload.version }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
       
       - name: Update README
         run: uv run update_readme.py
