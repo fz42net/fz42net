@@ -16,4 +16,4 @@ This `README.md` is generated automatically by [a scheduled GitHub Action](https
 
 <sub>Last updated: <!-- LAST-UPDATED --></sub>
 
-[![Build Status](https://github.com/fz42net/fz42net/workflows/Update%20README/badge.svg)](https://github.com/fz42net/fz42net/actions)
+[![Build Status](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml/badge.svg)](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml)
