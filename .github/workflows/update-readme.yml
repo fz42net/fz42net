@@ -31,17 +31,13 @@ jobs:
           echo "Fetching latest release info..."
           LATEST_RELEASE=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
             https://api.github.com/repos/fz42net/resume/releases/latest)
-          
-          echo "API Response:"
-          echo "$LATEST_RELEASE" | jq '.'
-          
+
           # Check if we got a valid response
           if echo "$LATEST_RELEASE" | jq -e '.assets' > /dev/null; then
             # Extract the download URL for resume.pdf
             DOWNLOAD_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name=="resume.pdf") | .url')
             
             if [ "$DOWNLOAD_URL" != "null" ] && [ -n "$DOWNLOAD_URL" ]; then
-              echo "Downloading PDF from: $DOWNLOAD_URL"
               # Download the PDF
               curl -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
                 -H "Accept: application/octet-stream" \
