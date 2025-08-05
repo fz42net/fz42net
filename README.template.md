@@ -7,19 +7,6 @@ Sometimes I write about security research, software development, and the interse
 ---
 
 <!-- BLOG-POST-LIST:START -->
-
-I write about technology, security, and software engineering on my [**personal blog**](https://fz42.net):
-
-* 🔧 [Detecting Azure Front Door WAF with BChecks](https://fz42.net/posts/detecting-azure-front-door-waf-with-bcheck/) <sub><em>July 27, 2025</em></sub>
-* 🔧 [Justifying Claude Max with ccusage](https://fz42.net/posts/justifying-claude-max-with-ccusage/) <sub><em>July 21, 2025</em></sub>
-* 🔧 [People aren't using IDEs anymore by end of year](https://fz42.net/posts/people-arent-using-ides-anymore-by-end-of-year/) <sub><em>July 15, 2025</em></sub>
-
----
-
-I also contribute to [**Stratum Security's blog**](https://blog.stratumsecurity.com) where I write about security research and consulting:
-
-* 🛡️ [Code Injection to RCE with .NET](https://blog.stratumsecurity.com/2024/04/29/code-injection-to-rce-with-net/)
-
 <!-- BLOG-POST-LIST:END -->
 
 ---
@@ -27,6 +14,6 @@ You can also find my [**resume here**](https://github.com/fz42net/resume/release
 
 This `README.md` is generated automatically by [a scheduled GitHub Action](https://github.com/fz42net/fz42net/blob/main/.github/workflows/update-readme.yml), inspired by [brandur's setup](https://github.com/brandur/brandur).
 
-<sub>Last updated: <!-- LAST-UPDATED -->August 05, 2025</sub>
+<sub>Last updated: <!-- LAST-UPDATED --></sub>
 
 [![Build Status](https://github.com/fz42net/fz42net/workflows/Update%20README/badge.svg)](https://github.com/fz42net/fz42net/actions)

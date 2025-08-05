@@ -1,0 +1,35 @@
+name: Update README
+
+on:
+  schedule:
+    # Runs at 8 AM UTC every day
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      
+      - name: Update README
+        run: uv run update_readme.py
+      
+      - name: Commit changes
+        run: |
+          git diff
+          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name "README-bot"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update README via GitHub Action"
+          git push
