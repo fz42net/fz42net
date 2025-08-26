@@ -27,6 +27,6 @@ You can also find my [**resume here**](https://github.com/fz42net/fz42net/blob/m
 
 This `README.md` is generated automatically by [a scheduled GitHub Action](https://github.com/fz42net/fz42net/blob/main/.github/workflows/update-readme.yml), inspired by [brandur's setup](https://github.com/brandur/brandur).
 
-<sub>Last updated: <!-- LAST-UPDATED -->August 25, 2025</sub>
+<sub>Last updated: <!-- LAST-UPDATED -->August 26, 2025</sub>
 
 [![Build Status](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml/badge.svg)](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml)
