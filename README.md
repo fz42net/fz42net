@@ -10,9 +10,9 @@ Sometimes I write about security research, software development, and the interse
 
 I write about technology, security, and software engineering on my [**personal blog**](https://fz42.net):
 
+* 🔧 [Introducing AI Influence Levels on fz42.net](https://fz42.net/posts/introducing-ai-influence-levels/) <sub><em>September 04, 2025</em></sub>
 * 🔧 [Automating My GitHub Profile with Actions](https://fz42.net/posts/automating-my-github-profile-with-actions/) <sub><em>July 28, 2025</em></sub>
 * 🔧 [Detecting Azure Front Door WAF with BChecks](https://fz42.net/posts/detecting-azure-front-door-waf-with-bcheck/) <sub><em>July 27, 2025</em></sub>
-* 🔧 [Justifying Claude Max with ccusage](https://fz42.net/posts/justifying-claude-max-with-ccusage/) <sub><em>July 21, 2025</em></sub>
 
 ---
 
@@ -27,6 +27,6 @@ You can also find my [**resume here**](https://github.com/fz42net/fz42net/blob/m
 
 This `README.md` is generated automatically by [a scheduled GitHub Action](https://github.com/fz42net/fz42net/blob/main/.github/workflows/update-readme.yml), inspired by [brandur's setup](https://github.com/brandur/brandur).
 
-<sub>Last updated: <!-- LAST-UPDATED -->September 04, 2025</sub>
+<sub>Last updated: <!-- LAST-UPDATED -->September 05, 2025</sub>
 
 [![Build Status](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml/badge.svg)](https://github.com/fz42net/fz42net/actions/workflows/update-readme.yml)
